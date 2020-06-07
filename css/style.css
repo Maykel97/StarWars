@@ -1,0 +1,279 @@
+/* подключение шрифта ProximaNova-Black удаенно без скачивания шрифта */
+@font-face {
+  font-family: "ProximaNova-Black";
+  src: local("ProximaNova-Black"),
+    url("https://nomail.com.ua/files/eot/aa46d234cf405126cdd1c36600e4b978.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://nomail.com.ua/files/woff/aa46d234cf405126cdd1c36600e4b978.woff")
+      format("woff"),
+    url("https://nomail.com.ua/files/woff2/aa46d234cf405126cdd1c36600e4b978.woff2")
+      format("woff2");
+}
+
+*,
+*:after,
+*:before {
+  /* для того чтоб ширина элементов не зависила от внутренних отступо и т.д */
+  box-sizing: border-box;
+}
+body {
+  background: #070506 url("/img/main-bg.png") top right 100% no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  /* ширина контейнера*/
+  width: 90%;
+  /* макс ширина 1060 px */
+  max-width: 1060px;
+  /* для того чтоб было по середине все содержимое */
+  margin: auto;
+  /* отступ с верху 90px */
+  padding-top: 90px;
+}
+
+.header {
+  display: flex;
+  /* выравнивание элементов по центру по отношению лого */
+  align-items: center;
+}
+
+.header__logo {
+  /* отступ с права */
+  margin-right: 70px;
+}
+
+.nav__link {
+  /* убирает подчеркивание */
+  text-decoration: none;
+  color: white;
+  /* отступ у каждой ссылки с права 15px */
+  margin-right: 15px;
+}
+
+.hero__subtitle {
+  /* сделать элемент блочным */
+  display: block;
+  /* отступ с верху */
+  margin-top: 70px;
+  font-size: 40px;
+  line-height: 100%;
+  font-family: "ProximaNova-Black" sans-serif;
+  padding-bottom: 10px;
+}
+
+.hero__title {
+  /* отступ  */
+  margin-top: 5px;
+  font-size: 64px;
+  line-height: 78%;
+  font-family: "ProximaNova-Black" sans-serif;
+  /* отступ  */
+  margin-bottom: 25px;
+}
+
+.hero__description {
+  /* ширина текста не больше 572px*/
+  max-width: 572px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #afafaf;
+}
+
+.hero__primier {
+  display: block;
+  font-size: 18px;
+  line-height: 150%;
+  color: #b02000;
+  margin-bottom: 5px;
+}
+
+.hero__date {
+  display: block;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 46px;
+}
+
+.button-play {
+  position: relative;
+  /* отключение обводки */
+  border: none;
+  background: linear-gradient(90deg, #fb641a 0%, #fc3309 100%);
+  /* скругливание границ */
+  border-radius: 300px;
+  color: #ffffff;
+  /* отступ сверху 25 и по краям 35 */
+  padding: 25px 35px;
+  /* отступ в кнопке с права */
+  padding-right: 80px;
+  /* для того чтоб текст был заглавными буквами */
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline-block;
+}
+
+/* псевдо элемент кнопки ::after - добавляет элементы в конце элемента 
+обычный круг */
+.button-play::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #fff url("/img/Polygon.svg") center no-repeat;
+  /* скругление */
+  border-radius: 50%;
+  /* для того чтоб было с право */
+  right: 0;
+  /* для того чтоб было сверху */
+  top: 0;
+}
+/* псевдо элемент ::before прозрачный круг */
+.button-play::before {
+  content: "";
+  position: absolute;
+  width: 81px;
+  height: 81px;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* скругление */
+  border-radius: 50%;
+  /* для того чтоб было с право */
+  right: -8px;
+  /* для того чтоб было сверху */
+  top: -8px;
+}
+
+.episodes {
+  padding: 60px 0;
+}
+
+.episodes__title {
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 24px;
+}
+
+/* работа с слайдером */
+/* слайдер */
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slider__item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  /* для того чтоб было в колону  */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  /* мин высота */
+  min-height: 200px;
+  /* отступ с права */
+  margin-right: 20px;
+  /* отступ с права */
+  margin-bottom: 20px;
+  /* внутренний отступ */
+  padding: 30px;
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.slider__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: rgba(80, 80, 80, 0.86);
+  /* плавность */
+  transition: all 0.2s;
+}
+
+.slider__item:hover::before {
+  background: rgba(64, 101, 255, 0.86);
+}
+
+.slider__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+.slider__rating-lable {
+  margin-right: 10px;
+}
+
+.star {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url("/img/star.svg") no-repeat center;
+}
+.star-0 {
+  background: url("/img/star-0.svg") no-repeat center;
+}
+
+.slider__nav--left {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent url("/img/left-arrow.svg") no-repeat center;
+  margin-right: 15px;
+  cursor: pointer;
+  /* отключение обводки */
+  outline: none;
+}
+
+.slider__nav--right {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent url("/img/right-arrow.svg") no-repeat center;
+  cursor: pointer;
+  /* отключение обводки */
+  outline: none;
+}
+
+.slider__nav--left span,
+.slider__nav--right span {
+  display: none;
+}
+
+/* адоптив */
+@media (max-width: 600px) {
+  .hero__subtitle {
+    font-size: 25px;
+  }
+  .hero__title {
+    font-size: 36px;
+  }
+  .hero__description {
+    font-size: 16px;
+  }
+  .header {
+    /* чтоб меню вниз спустилось */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header__logo {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  /* для маленьких экранов */
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+}

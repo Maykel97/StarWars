@@ -217,17 +217,17 @@ body {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: url("/img/star.svg") no-repeat center;
+  background: url("../img/star.svg") no-repeat center;
 }
 .star-0 {
-  background: url("/img/star-0.svg") no-repeat center;
+  background: url("../img/star-0.svg") no-repeat center;
 }
 
 .slider__nav--left {
   width: 32px;
   height: 32px;
   border: none;
-  background: transparent url("/img/left-arrow.svg") no-repeat center;
+  background: transparent url("../img/left-arrow.svg") no-repeat center;
   margin-right: 15px;
   cursor: pointer;
   /* отключение обводки */
@@ -238,7 +238,7 @@ body {
   width: 32px;
   height: 32px;
   border: none;
-  background: transparent url("/img/right-arrow.svg") no-repeat center;
+  background: transparent url("../img/right-arrow.svg") no-repeat center;
   cursor: pointer;
   /* отключение обводки */
   outline: none;

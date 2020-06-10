@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #070506 url("/img/main-bg.png") top right 100% no-repeat;
+  background: #070506 url("../img/main-bg.png") top right 100% no-repeat;
   background-size: contain;
   background-attachment: fixed;
   color: #ffffff;
@@ -125,7 +125,7 @@ body {
   position: absolute;
   width: 65px;
   height: 65px;
-  background: #fff url("/img/Polygon.svg") center no-repeat;
+  background: #fff url("../img/Polygon.svg") center no-repeat;
   /* скругление */
   border-radius: 50%;
   /* для того чтоб было с право */
